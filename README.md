@@ -75,3 +75,46 @@ student-result-system/
 │
 └── utils/
     └── helpers.py
+
+
+## How to Run Locally
+
+1️⃣ Clone the Repository
+
+Open Command Prompt / Terminal and run:
+git clone https://github.com/Sushanth-s07/Student-Result-Processing-System
+
+2️⃣ Navigate to the Project Folder
+cd student-result-system
+
+3️⃣ Install Required Dependencies
+
+Make sure Python is installed. Then run:
+
+pip install -r requirements.txt
+
+This will install required libraries such as:
+
+Flask
+
+SQLite (built-in with Python)
+
+4️⃣ Verify Project Structure
+
+Ensure your folder contains:
+
+app.py
+requirements.txt
+templates/
+static/
+database/
+5️⃣ Run the Flask Application
+
+Start the server by running:
+
+python app.py
+6️⃣ Open the Application in Browser
+
+After running the server, open your browser and go to:
+
+http://127.0.0.1:5000
