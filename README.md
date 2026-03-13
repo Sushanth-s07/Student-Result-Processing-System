@@ -35,3 +35,43 @@ Data Visualization:
 
 ## Project Structure
 
+student-result-system/
+│
+├── app.py
+├── config.py
+├── requirements.txt
+├── README.md
+│
+├── database/
+│   └── database.db
+│
+├── models/
+│   └── db.py
+│
+├── routes/
+│   ├── auth_routes.py
+│   ├── student_routes.py
+│   └── result_routes.py
+│
+├── templates/
+│   ├── login.html
+│   ├── dashboard.html
+│   ├── add_student.html
+│   ├── add_result.html
+│   ├── view_results.html
+│   └── analytics.html
+│
+├── static/
+│   │
+│   ├── css/
+│   │   └── style.css
+│   │
+│   ├── js/
+│   │   ├── script.js
+│   │   └── charts.js
+│   │
+│   └── images/
+│       └── logo.png
+│
+└── utils/
+    └── helpers.py
