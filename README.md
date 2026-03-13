@@ -87,7 +87,7 @@ git clone https://github.com/Sushanth-s07/Student-Result-Processing-System
 
 
 2️⃣ Navigate to the Project Folder
-cd student-result-system
+cd Student Result Processing System
 
 
 3️⃣ Install Required Dependencies
