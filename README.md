@@ -108,11 +108,13 @@ requirements.txt
 templates/
 static/
 database/
+
 5️⃣ Run the Flask Application
 
 Start the server by running:
 
 python app.py
+
 6️⃣ Open the Application in Browser
 
 After running the server, open your browser and go to:
