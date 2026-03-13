@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Academic Portal Login</title>
+</head>
+<body style="justify-content: center; align-items: center; display: flex;">
+    <div class="card" style="width: 400px; text-align: center;">
+        <h1 style="margin-bottom: 5px;">EduPortal</h1>
+        <p style="color: #666;">Teacher Management Access</p>
+        <form action="/teacher/login" method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit" class="btn" style="width: 100%;">Login to Dashboard</button>
+        </form>
+        <hr style="margin: 20px 0; border: 0.5px solid #eee;">
+        <a href="/student/login_page" style="color: var(--secondary); text-decoration: none;">Student Login Portal &rarr;</a>
+    </div>
+</body>
+</html>

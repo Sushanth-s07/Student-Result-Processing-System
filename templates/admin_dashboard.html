@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="/static/style.css"></head>
+<body>
+    <div class="sidebar">
+        <h2>EduPortal</h2>
+        <p>Welcome, <b>{{ t_name }}</b></p>
+        <hr>
+        <a href="/logout" style="color: white;">Logout</a>
+    </div>
+    <div class="main-content">
+        <div class="card">
+            <h3>Add New Student</h3>
+            <form action="/add_student" method="POST" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <input type="text" name="name" placeholder="Student Name" required>
+                <input type="text" name="roll_no" placeholder="Roll Number" required>
+                <input type="number" name="eng" placeholder="English" required>
+                <input type="number" name="sl" placeholder="2nd Language" required>
+                <input type="number" name="mat" placeholder="Math" required>
+                <input type="number" name="sci" placeholder="Science" required>
+                <input type="number" name="soc" placeholder="Social" required>
+                <button type="submit" class="btn">Save Result</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h3>Your Students</h3>
+            <table>
+                <tr>
+                    <th>Roll No</th>
+                    <th>Name</th>
+                    <th>Grade</th>
+                    <th>Overall Result</th>
+                    <th>Action</th>
+                </tr>
+                {% for s in students %}
+                <tr>
+                    <td>{{ s[2] }}</td>
+                    <td>{{ s[1] }}</td>
+                    <td><b>{{ s[11] }}</b></td>
+                    <td class="{{ 'pass' if s[12] == 'PASS' else 'fail' }}"><b>{{ s[12] }}</b></td>
+                    <td>
+                        <a href="/delete_student/{{ s[0] }}" class="fail" onclick="return confirm('Are you sure?')">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>

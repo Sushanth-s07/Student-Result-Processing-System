@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body style="display: block;">
+    <div class="main-content" style="margin: auto; max-width: 900px;">
+        <div class="card" style="text-align: center;">
+            <button class="btn" onclick="window.print()" style="float: right;">Print PDF</button>
+            <h1>Academic Progress Report</h1>
+            <p>Student: {{ s[1] }} | Roll: {{ s[2] }}</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px;">
+            <div class="card">
+                <h3>Subject Wise Performance</h3>
+                <table>
+                    <tr><th>Subject</th><th>Marks</th><th>Result</th></tr>
+                    {% set subjects = [('English', s[4]), ('2nd Lang', s[5]), ('Math', s[6]), ('Science', s[7]), ('Social', s[8])] %}
+                    {% for name, mark in subjects %}
+                    <tr>
+                        <td>{{ name }}</td>
+                        <td>{{ mark }}</td>
+                        <td class="{{ 'pass' if mark >= 35 else 'fail' }}"><b>{{ 'PASS' if mark >= 35 else 'FAIL' }}</b></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="card"><canvas id="myChart"></canvas></div>
+        </div>
+
+        <div class="card" style="display: flex; justify-content: space-around; text-align: center;">
+            <div><p>Total</p><h2>{{ s[9] }}/500</h2></div>
+            <div><p>Percentage</p><h2>{{ s[10] }}%</h2></div>
+            <div><p>Grade</p><h2>{{ s[11] }}</h2></div>
+            <div class="{{ 'pass' if s[12] == 'PASS' else 'fail' }}"><p>Final Result</p><h2>{{ s[12] }}</h2></div>
+        </div>
+    </div>
+
+    <script>
+        new Chart(document.getElementById('myChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Eng', 'SL', 'Mat', 'Sci', 'Soc'],
+                datasets: [{ label: 'Marks', data: [{{s[4]}}, {{s[5]}}, {{s[6]}}, {{s[7]}}, {{s[8]}}], backgroundColor: '#2979FF' }]
+            }
+        });
+    </script>
+</body>
+</html>
