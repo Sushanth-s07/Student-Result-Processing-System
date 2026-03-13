@@ -84,8 +84,11 @@ student-result-system/
 Open Command Prompt / Terminal and run:
 git clone https://github.com/Sushanth-s07/Student-Result-Processing-System
 
+
+
 2️⃣ Navigate to the Project Folder
 cd student-result-system
+
 
 3️⃣ Install Required Dependencies
 
@@ -99,6 +102,7 @@ Flask
 
 SQLite (built-in with Python)
 
+
 4️⃣ Verify Project Structure
 
 Ensure your folder contains:
@@ -109,11 +113,13 @@ templates/
 static/
 database/
 
+
 5️⃣ Run the Flask Application
 
 Start the server by running:
 
 python app.py
+
 
 6️⃣ Open the Application in Browser
 
